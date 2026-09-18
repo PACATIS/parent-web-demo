@@ -1,0 +1,1064 @@
+/* ------------------------------------------------------------------ */
+/* Base / reset                                                       */
+/* ------------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0c1015;
+  color: #eef2f6;
+}
+
+/* ------------------------------------------------------------------ */
+/* App shell                                                          */
+/* ------------------------------------------------------------------ */
+
+.app {
+  min-height: 100vh;
+  background: #0c1015;
+  color: #eef2f6;
+}
+
+.app.clinical {
+  background: #eaf1f7;
+  color: #172331;
+}
+
+/* ------------------------------------------------------------------ */
+/* Top bar                                                            */
+/* ------------------------------------------------------------------ */
+
+.topbar {
+  height: 70px;
+  border-bottom: 1px solid #27303a;
+  background: #10151c;
+  display: flex;
+  align-items: center;
+  padding: 0 max(20px, calc((100vw - 1180px) / 2));
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.clinical .topbar {
+  background: #f7fafc;
+  border-color: #c8d3dd;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand span {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.55;
+  margin-left: 7px;
+}
+
+.top-recipient {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-recipient small,
+.team span,
+.episode span,
+.measure span {
+  display: block;
+  color: #8e9aa7;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Avatars                                                            */
+/* ------------------------------------------------------------------ */
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #536df0;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.avatar.big {
+  width: 54px;
+  height: 54px;
+}
+
+.avatar.small {
+  width: 36px;
+  height: 36px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout                                                             */
+/* ------------------------------------------------------------------ */
+
+.content {
+  max-width: 1180px;
+  margin: auto;
+  padding: 30px 20px 100px;
+}
+
+.screenhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.screenhead h1 {
+  margin: 0 0 4px;
+  font-size: 30px;
+}
+
+.screenhead p,
+.card p {
+  margin: 0;
+  color: #8e9aa7;
+}
+
+.clinical .screenhead p,
+.clinical .card p,
+.clinical .muted,
+.clinical .top-recipient small {
+  color: #607180;
+}
+
+/* ------------------------------------------------------------------ */
+/* Buttons                                                            */
+/* ------------------------------------------------------------------ */
+
+.primary,
+.secondary,
+.danger,
+.iconbtn,
+.textbtn,
+.toggle button,
+.choicegrid button,
+.outcomes button,
+.severitygrid button {
+  border: 1px solid #35404c;
+  background: #18202a;
+  color: inherit;
+  border-radius: 11px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary {
+  background: #5a6ff0;
+  border-color: #5a6ff0;
+  color: white;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.danger {
+  background: #55242b;
+  border-color: #71323a;
+  color: #ffccd0;
+}
+
+.iconbtn {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.textbtn {
+  border: 0;
+  background: none;
+  padding: 5px;
+  color: #9ba8ff;
+}
+
+.full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Cards                                                              */
+/* ------------------------------------------------------------------ */
+
+.card {
+  background: #121820;
+  border: 1px solid #27313b;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.clinical .card {
+  background: #f8fbfd;
+  border-color: #cbd7e0;
+}
+
+.recipient,
+.profilehead {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.recipient h2,
+.profilehead h2 {
+  margin: 0 0 4px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Vigilance                                                          */
+/* ------------------------------------------------------------------ */
+
+.vigilance {
+  display: flex;
+  gap: 12px;
+  background: #191b1b;
+  border: 1px solid #554e32;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.clinical .vigilance {
+  background: #fff8e8;
+}
+
+.vigilance ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #c9b97a;
+}
+
+.clinical .vigilance ul {
+  color: #806d2d;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #8e9aa7;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Intelligence / data suggestion                                     */
+/* ------------------------------------------------------------------ */
+
+.intelligence {
+  background: linear-gradient(135deg, #151b2a, #121820);
+}
+
+.clinical .intelligence {
+  background: #edf4ff;
+}
+
+.intelligence h2 {
+  margin: 10px 0 7px;
+}
+
+.suggestions {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #34405b;
+  border-radius: 12px;
+}
+
+.suggestions span,
+.evidence {
+  display: block;
+  color: #8e9aa7;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Stats                                                              */
+/* ------------------------------------------------------------------ */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  background: #121820;
+  border: 1px solid #27313b;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.clinical .stat {
+  background: #f8fbfd;
+  border-color: #cbd7e0;
+}
+
+.stat div {
+  color: #7f8cff;
+}
+
+.stat strong {
+  display: block;
+  font-size: 25px;
+  margin-top: 6px;
+}
+
+.stat span {
+  color: #8e9aa7;
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Card titles & episodes                                             */
+/* ------------------------------------------------------------------ */
+
+.cardtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cardtitle h3,
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.episode {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #27313b;
+  background: none;
+  color: inherit;
+  padding: 13px 0;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.episode:first-of-type {
+  border-top: 0;
+}
+
+.severity {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.severity.mild {
+  background: #183a2c;
+  color: #72d7a5;
+}
+
+.severity.moderate {
+  background: #40351c;
+  color: #e4c567;
+}
+
+.severity.severe {
+  background: #452126;
+  color: #f28a96;
+}
+
+.resolution {
+  margin-left: auto;
+  color: #8e9aa7;
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Bottom tab bar                                                      */
+/* ------------------------------------------------------------------ */
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #10151c;
+  border-top: 1px solid #27303a;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  z-index: 20;
+}
+
+.clinical .tabbar {
+  background: #f7fafc;
+  border-color: #c8d3dd;
+}
+
+.tabbar button {
+  width: 110px;
+  border: 0;
+  background: none;
+  color: #7f8a96;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.tabbar button.active {
+  color: #8c9aff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Calendar                                                            */
+/* ------------------------------------------------------------------ */
+
+.toggle {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.toggle button.selected,
+.choicegrid button.selected,
+.outcomes button.selected,
+.severitygrid button.selected {
+  background: #5367dd;
+  color: white;
+  border-color: #5367dd;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.month {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.day {
+  min-height: 140px;
+  background: #121820;
+  border: 1px solid #27313b;
+  border-radius: 13px;
+  padding: 10px;
+}
+
+.clinical .day {
+  background: #f8fbfd;
+  border-color: #cbd7e0;
+}
+
+.day > b {
+  font-size: 12px;
+  color: #8e9aa7;
+}
+
+.cal-event {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 8px;
+  background: #2b2418;
+  color: #f0d17d;
+  margin-top: 7px;
+  padding: 7px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.clinical .cal-event {
+  background: #fff1df;
+  color: #9b5d14;
+}
+
+.cal-event span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e39b38;
+  margin-right: 5px;
+}
+
+.cal-event small {
+  display: block;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Muted text                                                          */
+/* ------------------------------------------------------------------ */
+
+.muted {
+  color: #8e9aa7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Two-column layout                                                   */
+/* ------------------------------------------------------------------ */
+
+.twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Ranks, measures, list items, team                                   */
+/* ------------------------------------------------------------------ */
+
+.rank,
+.measure,
+.listitem,
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-top: 1px solid #27313b;
+}
+
+.rank b {
+  margin-left: auto;
+}
+
+.measure {
+  position: relative;
+}
+
+.measure > div:first-child {
+  flex: 1;
+}
+
+.measure strong {
+  width: 48px;
+  text-align: right;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: #26303a;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  background: #6575f1;
+}
+
+.team em {
+  margin-left: auto;
+  font-size: 11px;
+  color: #8e9aa7;
+  font-style: normal;
+}
+
+.listitem svg {
+  color: #7181ef;
+}
+
+/* ------------------------------------------------------------------ */
+/* Modals                                                              */
+/* ------------------------------------------------------------------ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal {
+  width: min(650px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #121820;
+  border: 1px solid #34404c;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 20px 80px #0008;
+}
+
+.clinical .modal {
+  background: #f8fbfd;
+  color: #172331;
+}
+
+.smallmodal {
+  max-width: 460px;
+}
+
+.modalhead {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.modal h2 {
+  margin: 5px 0 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Modal forms                                                         */
+/* ------------------------------------------------------------------ */
+
+.choicegrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.choicegrid button {
+  text-align: left;
+}
+
+.severitygrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.severitygrid button b {
+  display: block;
+  font-size: 22px;
+}
+
+.severitygrid button span {
+  display: block;
+  text-transform: capitalize;
+  margin-top: 3px;
+}
+
+.modal label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 14px 0;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #35404c;
+  background: #0d1218;
+  color: inherit;
+  font: inherit;
+}
+
+.clinical .modal input,
+.clinical .modal select {
+  background: white;
+}
+
+.outcomes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modalactions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Chips                                                               */
+/* ------------------------------------------------------------------ */
+
+.chips {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.chips span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #202a34;
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Timeline                                                            */
+/* ------------------------------------------------------------------ */
+
+.timeline {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #27313b;
+}
+
+.timeline .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-top: 5px;
+  background: #6575f1;
+}
+
+.timeline .dot.didNotWork {
+  background: #d46772;
+}
+
+.timeline .dot.partiallyWorked {
+  background: #d5ad53;
+}
+
+.timeline span {
+  display: block;
+  color: #8e9aa7;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.clinical .timeline,
+.clinical .episode,
+.clinical .team,
+.clinical .listitem,
+.clinical .rank {
+  border-color: #d8e0e6;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+  .content {
+    padding: 22px 14px 92px;
+  }
+
+  .topbar {
+    padding: 0 14px;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .week {
+    grid-template-columns: 1fr;
+  }
+
+  .month {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .twocol {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tabbar button {
+    width: 20vw;
+  }
+
+  .screenhead {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .choicegrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 18px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Fast episode logging                                                */
+/* ------------------------------------------------------------------ */
+
+.logmodal {
+  width: min(700px, 100%);
+}
+
+.loghint {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 18px !important;
+}
+
+.logsection {
+  margin: 18px 0;
+}
+
+.loglabel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+
+.severitygrid.compact {
+  margin-bottom: 0;
+}
+
+.choicegrid.compact {
+  gap: 8px;
+}
+
+.choicegrid.compact button,
+.severitygrid.compact button {
+  min-height: 52px;
+}
+
+.severitygrid.compact button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.severitygrid.compact button b {
+  font-size: 20px;
+}
+
+.logactions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.logactions button {
+  min-height: 46px;
+}
+
+.logactions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.saveerror {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  background: #55242b;
+  border: 1px solid #71323a;
+  color: #ffccd0;
+  border-radius: 11px;
+  padding: 11px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.saveerror svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.microcopy {
+  font-size: 11px !important;
+  text-align: center;
+  margin-top: 10px !important;
+}
+
+.detailbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #27313b;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.detailbar span {
+  font-size: 11px;
+  color: #8e9aa7;
+}
+
+.quicksaved {
+  text-align: center;
+  padding: 34px;
+}
+
+.successicon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  background: #183a2c;
+  color: #72d7a5;
+}
+
+.quicksaved h2 {
+  margin: 6px 0;
+}
+
+.incompletebanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #191b1b;
+  border: 1px solid #554e32;
+  border-radius: 14px;
+  padding: 13px 15px;
+  margin-bottom: 16px;
+}
+
+.incompletebanner span {
+  color: #c9b97a;
+  font-size: 12px;
+}
+
+.clinical .incompletebanner {
+  background: #fff8e8;
+  border-color: #e6d5a5;
+}
+
+.clinical .incompletebanner span {
+  color: #806d2d;
+}
+
+@media (max-width: 760px) {
+  .logactions {
+    flex-direction: column;
+  }
+
+  .logactions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .incompletebanner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+.durationgrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.durationgrid button {
+  border: 1px solid #35404c;
+  background: #18202a;
+  color: inherit;
+  border-radius: 11px;
+  padding: 11px 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.durationgrid button.selected {
+  background: #5367dd;
+  color: white;
+  border-color: #5367dd;
+}
+
+.incompletecard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #191b1b;
+  border: 1px solid #554e32;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.incompletecard p {
+  margin-top: 4px !important;
+  font-size: 12px;
+}
+
+.emptychip {
+  opacity: 0.6;
+}
+
+.clinical .incompletecard {
+  background: #fff8e8;
+  border-color: #e6d5a5;
+}
+
+@media (max-width: 760px) {
+  .durationgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .incompletecard {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
